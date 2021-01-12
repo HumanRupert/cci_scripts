@@ -1,0 +1,2 @@
+code,condition,name,desc,source,url,file,year,methodology,native,composite,mostafa_approved
+DETH,Diversity,"Ethnic diversity","The diversity is calculated according the following method: the different ethnic percentages are ordered by magnitude and multiplied by crescent ordinal numbers (es. 60% * 1, 30%*2, 10%*3).","Infoplease as base data, refined by internal research",http://www.infoplease.com/ipa/A0855617.html,Diversity.xls,2015,,1,1,1
