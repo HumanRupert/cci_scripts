@@ -7,16 +7,16 @@ import warnings
 import country_converter as coco
 
 
-def make_req(url, method, params={}, headers={}):
+def make_req(method, url, params={}, headers={}):
     # https://stackoverflow.com/a/38489588/10295948
     headers["User-Agent"] = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"
 
     try:
         response = requests.request(
-            url, method, data=params, headers=headers)
+            method, url, data=params, headers=headers)
         response.raise_for_status()
     except requests.RequestException as e:
-        logging.error(response.text)
+        logging.error(response.json())
         raise
 
     return response.json()
