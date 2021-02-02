@@ -7,6 +7,13 @@ from src.common import get_country_codes, generate_file_address, write_to_csv, c
 
 
 def handle_pew_rdi(path):
+    """Given the URL of the most recent Religious Diversity Index's Excel file, collects RDI data 
+
+    Parameters
+    ----------
+    path : `str`
+        Remote or local path to the Excel file
+    """
     # read excel
     rdi = pd.read_excel(path, usecols=["Country", "RDI"])
 

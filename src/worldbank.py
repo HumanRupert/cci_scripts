@@ -88,16 +88,21 @@ def _handle_single_worldbank(code, start, end):
 
 
 def handle_worldbank(**period):
-    period = Input(**period)
+    """Collects latest available datapoints given a start and end year for Worldbank codes defined in /data
 
-    results = []
+    Parameters
+    -------
+    start: `int` 
+        The starting year to get the data for
+
+    end: `int`
+        The last year to get the data for
+    """
+    period = Input(**period)
 
     with open('data/codes/worldbank_codes.csv') as codes_file:
         codes = csv.DictReader(codes_file, delimiter=',', quotechar='"')
         codes = list(codes)[:2]
         for code in codes:
-            result = _handle_single_worldbank(
+            _handle_single_worldbank(
                 code=code, start=period.start, end=period.end)
-            results.append(result)
-
-    return results
